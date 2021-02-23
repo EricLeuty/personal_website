@@ -20,7 +20,7 @@ app.get('/style', (req, res) => {
 });
 
 app.get('/stella', (req, res) => {
-    res.sendFile('/home/eric/personal_website/stella.png)
+    res.sendFile('/home/eric/personal_website/stella.png')
 });
  
 const server = app.listen(8080, () => {
