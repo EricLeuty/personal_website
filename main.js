@@ -4,10 +4,12 @@ const fs = require('fs');
 const app = express();
 
 app.get('/', (req, res) => {
+    console.log(`It worked`)
    res.sendFile('/home/eric/personal_website/home.html')
 });
 
 app.get('/skills', (req, res) => {
+    console.log(`He got punked`)
    res.sendFile('/home/eric/personal_website/skills.html')
 });
 
