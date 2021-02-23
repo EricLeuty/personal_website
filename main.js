@@ -18,6 +18,10 @@ app.get('/work', (req, res) => {
 app.get('/style', (req, res) => {
 	res.sendFile('/home/eric/personal_website/style.css')
 });
+
+app.get('/stella', (req, res) => {
+    res.sendFile('/home/eric/personal_website/stella')
+});
  
 const server = app.listen(8080, () => {
    console.log(`Express running -> PORT ${server.address().port}`);
