@@ -15,6 +15,10 @@ app.get('/work', (req, res) => {
    res.sendFile('/home/eric/personal_website/work.html')
 });
 
+app.get('/style', (req, res) => {
+	res.sendFile('/home/eric/personal_website/style.css')
+});
+ 
 const server = app.listen(8080, () => {
    console.log(`Express running -> PORT ${server.address().port}`);
 });
