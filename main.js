@@ -15,11 +15,11 @@ app.get('/work', (req, res) => {
    res.sendFile('/home/eric/personal_website/work.html')
 });
 
-app.get('/style', (req, res) => {
+app.get('/style.css', (req, res) => {
 	res.sendFile('/home/eric/personal_website/style.css')
 });
 
-app.get('/stella', (req, res) => {
+app.get('/stella.png', (req, res) => {
     res.sendFile('/home/eric/personal_website/stella.png')
 });
  
