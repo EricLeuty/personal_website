@@ -1,7 +1,16 @@
 const express = require('express');
+const https = require('https');
+const http = require('http');
 const fs = require('fs');
 
+const privateKey = fs.readFileSync('/home/eric/personal_website/key.pem');
+const certificate = fs.readFileSync('/home/eric/personal_website/cert.pem');
+const credentials = {key: privateKey, cert: certificate};
+
 const app = express();
+
+const httpsServer = https.createServer(credentials, app);
+const httpServer = http.createServer(app);
 
 app.get('/', (req, res) => {
     console.log(`It worked`)
@@ -28,7 +37,11 @@ app.get('/stella.png', (req, res) => {
 app.get('/flowers.jpeg', (req, res) => {
     res.sendFile('/home/eric/personal_website/flowers.jpeg')
 });
- 
-const server = app.listen(8080, () => {
-   console.log(`Express running -> PORT ${server.address().port}`);
+
+httpsServer.listen(8080, function (req, res) {
+   console.log(`HTTPS running -> PORT ${httpsServer.address().port}`);
+});
+
+httpServer.listen(8081, function (req, res) {
+    console.log(`HTTP running -> PORT ${httpServer.address().port}`);
 });
