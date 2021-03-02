@@ -3,11 +3,6 @@ body {
     font-family: sans-serif;
 }
 
-.prank img {
-    width: 700px;
-    height: 500px;
-}
-
 .nav {
     background-color: #6495ed;
     overflow: hidden;
